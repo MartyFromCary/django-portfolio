@@ -1,3 +1,5 @@
+Get Started With Django Part 1: Build a Portfolio App
+
 python -m venv .env
 source .env/Scripts/activate
 
@@ -7,3 +9,19 @@ pip install --upgrade pip
 django-admin startproject portfolio .
 
 python manage.py runserver
+++
+git remote add origin git@github.com:MartyFromCary/django-portfolio.git
+git push -u origin master
+++
+git clone git@github.com:MartyFromCary/django-portfolio.git
+++
+==
+python manage.py startapp projects
+=> projects/migrations/__init__
+=> projects/__init__.py
+=> projects/admin.py
+=> projects/apps.py
+=> projects/models.py
+=> projects/tests.py
+=> projects/views.py
+
