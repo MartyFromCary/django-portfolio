@@ -25,3 +25,15 @@ python manage.py startapp projects
 => projects/tests.py
 => projects/views.py
 
+Try: http://localhost:8000/projects
+In portfolio/settings.py append to INSTALLED_APPS
+    'projects', 
+    (register app)
+In portfolio/urls.py append to urlpatterns[]
+    path('projects/', include('projects.urls')),
+    (add route)
+Create projects/urls.py, append to urlpatterns[]
+    path('', views.project_list),
+In projects/views add
+    def project_list(request):
+        return HttpResponse("<h1>Hello everyone!</h1>")
