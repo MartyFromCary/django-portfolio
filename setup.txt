@@ -6,7 +6,7 @@ source .env/Scripts/activate
 pip install django
 pip install --upgrade pip
 
-django-admin startproject portfolio .
+django-admin startproject projects .
 
 python manage.py runserver
 ++
@@ -34,6 +34,15 @@ In portfolio/urls.py append to urlpatterns[]
     (add route)
 Create projects/urls.py, append to urlpatterns[]
     path('', views.project_list),
-In projects/views add
+In projects/views.py add
     def project_list(request):
         return HttpResponse("<h1>Hello everyone!</h1>")
+
+In portfolio/settings.py append to TEMPLATES[0].DIRS[]
+    os.path.join(BASE_DIR,'templates/projects') 
+    (register view)
+Add projects/templates/projects/index.html
+    <h1>Hello everyone!</h1>
+In projects/views.py
+        return HttpResponse("<h1>Hello everyone!</h1>")
+to      return render(request,'projects/index.html')
